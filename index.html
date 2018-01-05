@@ -4,12 +4,14 @@
     <title>Pixel Art Maker!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="designs.js"></script>
 </head>
 <body>
     <h1>Lab: Pixel Art Maker</h1>
 
-    <h2>Choose Grid Size</h2>
     <form id="sizePicker">
+    <h2>Choose Grid Size</h2>
         Grid Height:
         <input type="number" id="input_height" name="height" min="1" value="1">
         Grid Width:
@@ -22,7 +24,8 @@
 
     <h2>Design Canvas</h2>
     <table id="pixel_canvas"></table>
-
-    <script src="designs.js"></script>
+    <span id="span1"></span><br>
+    <span id="span2"></span><br>
+    <span id="span3"></span>
 </body>
 </html>
