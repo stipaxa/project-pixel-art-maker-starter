@@ -1,3 +1,4 @@
+
 $( document ).ready(function() {
 $("#sizePicker").submit(function() {
     // Select size input
@@ -19,10 +20,17 @@ function styleGrid() {
 	$("#pixel_canvas").css("margin","0 auto");
 
 	$("#pixel_canvas td").css("border", "1px solid black");
-	$("#pixel_canvas td").css("width", "10px");
-	$("#pixel_canvas td").css("height", "10px");
+	$("#pixel_canvas td").css("width", "20px");
+	$("#pixel_canvas td").css("height", "20px");
 	$("#pixel_canvas td").css("padding", "0px");
 	$("#pixel_canvas td").css("background-color", "#ffff99");
+
+	$(".pixelTable").click(function(event){
+		var target = $(event.target);
+		if(target.is("td")) {
+			target.css("background-color", "red");			
+		}
+	});
 }
 
 // Draw the grid
@@ -30,6 +38,7 @@ function drawGrid(w, h) {
 	$(".pixelTable").remove();
 	for (var i = 0; i < h; i++) {	
 		$("#pixel_canvas").append("<tr class='pixelTable'></tr>");
+		//$("#pixel_canvas").append("<tr></tr>");
 	}
 
 	$("#pixel_canvas tr").each(function() {
