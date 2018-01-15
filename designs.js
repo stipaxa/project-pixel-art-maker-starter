@@ -1,3 +1,5 @@
+//var isDown = false;
+
 $( document ).ready(function() {
 $("#sizePicker").submit(function() {
     // Select size input
@@ -28,6 +30,53 @@ function styleGrid() {
             target.css("background-color", $("#colorPicker").val());
         } 
     });
+/*
+    $(".pixelTable").mousedown(function(event){
+        event.preventDefault();
+        isDown = true;
+    });
+
+    $(".pixelTable").mouseup(function(event){
+        event.preventDefault();
+        isDown = false;
+    });
+
+    $(".pixelTable").mousemove(function(){
+        if (isDown) {
+            var target = $(event.target);
+            if(target.is("td")) {
+                target.css("background-color", $("#colorPicker").val());
+            }
+        }
+    }); */ 
+
+    $(".pixelTable").mousedown(function(event) {
+        $(".pixelTable").mousemove(function(event) {
+            event.preventDefault();
+            var target = $(event.target);
+            if(target.is("td")) {
+                target.css("background-color", $("#colorPicker").val());
+            } 
+        })
+    }).mouseup(function(event) {
+        event.preventDefault();
+        $(".pixelTable").unbind("mousemove");
+    });
+
+/*    $(".pixelTable").mousedown(function(event) {
+        $(".pixelTable").mousemove(function(event) {
+            event.preventDefault();
+            var target = $(event.target);
+            if(target.is("td")) {
+                target.css("background-color", $("#colorPicker").val());
+            } 
+        })
+    });
+
+    $(".pixelTable").mouseup(function(event) {
+        event.preventDefault();
+        $(".pixelTable").unbind("mousemove");
+    });*/
 }
 
 // Draw the grid
