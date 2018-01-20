@@ -1,6 +1,3 @@
-//var isDown = false;
-
-$( document ).ready(function() {
 $("#sizePicker").submit(function() {
     // Select size input
     var grid_height  = $("#input_height").val();
@@ -10,7 +7,6 @@ $("#sizePicker").submit(function() {
     styleGrid();
     
     event.preventDefault();
-});
 });
 
 // Make up the grid
@@ -22,7 +18,7 @@ function styleGrid() {
     $("#pixel_canvas td").css("width", "20px");
     $("#pixel_canvas td").css("height", "20px");
     $("#pixel_canvas td").css("padding", "0px");
-    $("#pixel_canvas td").css("background-color", "#ffff99");
+    $("#pixel_canvas td").css("background-color", "#ffffff");
 
     $(".pixelTable").click(function(event){
         var target = $(event.target);
@@ -30,53 +26,19 @@ function styleGrid() {
             target.css("background-color", $("#colorPicker").val());
         } 
     });
-/*
-    $(".pixelTable").mousedown(function(event){
-        event.preventDefault();
-        isDown = true;
-    });
-
-    $(".pixelTable").mouseup(function(event){
-        event.preventDefault();
-        isDown = false;
-    });
-
-    $(".pixelTable").mousemove(function(){
-        if (isDown) {
-            var target = $(event.target);
-            if(target.is("td")) {
-                target.css("background-color", $("#colorPicker").val());
-            }
-        }
-    }); */ 
 
     $(".pixelTable").mousedown(function(event) {
         $(".pixelTable").mousemove(function(event) {
-            event.preventDefault();
             var target = $(event.target);
             if(target.is("td")) {
                 target.css("background-color", $("#colorPicker").val());
             } 
+            event.preventDefault();
         })
     }).mouseup(function(event) {
-        event.preventDefault();
         $(".pixelTable").unbind("mousemove");
-    });
-
-/*    $(".pixelTable").mousedown(function(event) {
-        $(".pixelTable").mousemove(function(event) {
-            event.preventDefault();
-            var target = $(event.target);
-            if(target.is("td")) {
-                target.css("background-color", $("#colorPicker").val());
-            } 
-        })
-    });
-
-    $(".pixelTable").mouseup(function(event) {
         event.preventDefault();
-        $(".pixelTable").unbind("mousemove");
-    });*/
+    });
 }
 
 // Draw the grid
@@ -89,5 +51,5 @@ function drawGrid(w, h) {
     $("#pixel_canvas tr").each(function() {
         for (var j = 0; j < w; j++) 
             $(this).append("<td class='pixelTable'></td>");
-    });    
+    });   
 }
