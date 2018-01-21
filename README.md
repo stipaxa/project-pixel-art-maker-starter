@@ -1,5 +1,10 @@
 # Pixel Art Maker Project
 
+This project is a final project in "Google Challenge Scholarship: Front-End Web Dev" course by [udacity](https://www.udacity.com/).
+
+## Instructions
+
+
 ## Table of Contents
 
 * [Instructions](#instructions)
