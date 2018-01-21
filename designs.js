@@ -10,16 +10,7 @@ $("#sizePicker").submit(function() {
 });
 
 // Make up the grid
-function styleGrid() {
-    $("#pixel_canvas").css("border-collapse", "collapse");
-    $("#pixel_canvas").css("margin","0 auto");
-
-    $("#pixel_canvas td").css("border", "1px solid black");
-    $("#pixel_canvas td").css("width", "20px");
-    $("#pixel_canvas td").css("height", "20px");
-    $("#pixel_canvas td").css("padding", "0px");
-    $("#pixel_canvas td").css("background-color", "#ffffff");
-
+function styleGrid(event) {
     $(".pixelTable").click(function(event){
         var target = $(event.target);
         if(target.is("td")) {

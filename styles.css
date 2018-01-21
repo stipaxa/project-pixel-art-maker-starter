@@ -108,3 +108,15 @@ h2:first-of-type {
 input[type=number] {
     width: 40px;
 }
+
+#pixel_canvas {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#pixel_canvas td {
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
