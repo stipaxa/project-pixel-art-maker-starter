@@ -1,4 +1,4 @@
-$("#size_picker").submit(function() {
+$("#size_picker").submit(function(event) {
     var grid_height  = $("#input_height").val();
     var grid_width   = $("#input_width").val();
 
@@ -14,18 +14,18 @@ $("#size_picker").submit(function() {
 
     $("#pixel_canvas td").click(function(event){
         $(event.target).css("background-color", $("#color_picker").val());
-        event.preventDefault(event);
+        event.preventDefault();
     });
 
     $("#pixel_canvas td").mousedown(function(event) {
         $("#pixel_canvas td").mousemove(function(event) {
             $(event.target).css("background-color", $("#color_picker").val());
-            event.preventDefault(event);
+            event.preventDefault();
         })
     }).mouseup(function(event) {
         $("#pixel_canvas td").unbind("mousemove");
-        event.preventDefault(event);
+        event.preventDefault();
     });
     
-    event.preventDefault(event);
+    event.preventDefault();
 });
